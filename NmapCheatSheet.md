@@ -14,6 +14,7 @@
 - [🎥 Video Courses](#-video-courses)  
 - [📝 Cheat Sheet](#-cheat-sheet)  
 - [🤝 Contribute](#-contribute)  
+- [📌 Resources](#-resources)  
 
 ---
 
@@ -34,65 +35,84 @@
 ## 💡 Core Concepts  
 
 ### 1. Target Specification 🎯  
+```bash
+nmap -p21,22,80 192.168.1.5           # Specific ports  
+nmap -iL targets.txt                  # Scan from file  
+nmap 192.168.1.1-100 --exclude 50-60 # Exclude range  
 
-nmap -p21,22,80 192.168.1.5    # Specific ports
-nmap -iL targets.txt            # Scan from file
-nmap 192.168.1.1-100 --exclude 50-60
 
 
 2. Host Discovery 🌐
+nmap -sn 192.168.1.0/24               # Fast ping scan  
+nmap -PS80,443 -PA21 target_ip       # SYN/ACK stealth  
 
-nmap -sn 192.168.1.0/24        # Fast ping scan
-nmap -PS80,443 -PA21 target_ip # SYN/ACK stealth
+
 
 3. Service Detection 🔓
-nmap -sV --version-intensity 5 target_ip
-nmap -sU -p53,67 target_ip     # UDP services
+nmap -sV --version-intensity 5 target_ip  
+nmap -sU -p53,67 target_ip           # UDP services  
 
 🚨 Advanced Techniques
 Firewall Evasion 🎩
-nmap -f -D decoy1,decoy2,ME target_ip  # Fragment + Decoys
-nmap -S 192.168.1.100 -e eth0 target_ip # Spoof IP
+nmap -f -D decoy1,decoy2,ME target_ip        # Fragment + Decoys  
+nmap -S 192.168.1.100 -e eth0 target_ip      # Spoof IP  
+
+
 
 Timing Optimization ⏱️
-nmap -T5 --min-rate 1000 target_ip    # Speed demon mode
-nmap --scan-delay 500ms target_ip     # Avoid IDS
+nmap -T5 --min-rate 1000 target_ip           # Speed demon mode  
+nmap --scan-delay 500ms target_ip            # Avoid IDS  
+
 
 🎯 Real-World Labs
 Lab 1: Metasploitable Recon
 Goal: Map all services on a vulnerable VM
 nmap -A -p- 192.168.1.5
 
+
 Lab 2: Firewall Evasion Challenge
 nmap -f --script=firewall-bypass target_ip
 
+
 🎥 Video Courses
-Nmap Course
+Watch full walkthroughs:
+
+Nmap Full Course Playlist 🔗
 https://www.youtube.com/playlist?list=PLKzQIXgxD4FpHSeh7MexJRCQrZIQV2v0h
+Lab Setup Guide 🔧
+https://www.youtube.com/playlist?list=PLKzQIXgxD4Fplje9rKeq7FgHTiScpu-l8
 
-🤝 Contribute
-Found a bug? Want to add labs?
-
+📝 Cheat Sheet
+Use can Download this is a Cheat Sheet
 
 📌 Resources
 Official Nmap Documentation
 
 Kali Linux Setup Guide
 
-🌟 Crafted by Waleed Yousafzai
+
+👨‍💻 Crafted by Waleed Yousafzai
 Pentester | Educator | Open-Source Advocate
 
 📜 License: MIT
-⚠️ Ethical Note: Always obtain proper authorization for scanning
+⚠️ Ethical Note: Always obtain proper authorization before scanning targets.
 
-GitHub Stars
 
-**Key Features**:
-- 🎨 Modern shield badges for visual hierarchy
-- 🖥️ Syntax-highlighted code blocks
-- 🔗 Interactive YouTube playlist links
-- 📱 Mobile-responsive structure
-- 🔍 Clear section navigation
-- 💾 Download-ready cheat sheet link
-- 🤝 Clear contribution guidelines
+⭐ GitHub Stars
+If you find this helpful, leave a ⭐ to support the project!
 
+
+Key Features:
+🎨 Modern shield badges for visual hierarchy
+
+🖥️ Syntax-highlighted code blocks
+
+🔗 Interactive YouTube playlist links
+
+📱 Mobile-responsive structure
+
+🔍 Clear section navigation
+
+💾 Download-ready cheat sheet link
+
+🤝 Clear contribution guidelines
